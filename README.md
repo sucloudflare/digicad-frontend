@@ -43,8 +43,7 @@
 <h3>Para Projetos React:</h3>
 <pre><code>git clone https://github.com/sucloudlfare/digicad-frontend.git</code></pre>
 <p>Navegue até a pasta do projeto React:</p>
-<pre><code>cd digicad-frontend</code></pre>
-000</a>.</p>
+<pre><code>cd digicad-frontend</code></pre></a>.</p>
 <p>Instale as dependências:</p>
     <pre><code>npm install</code></pre>
     <p>Execute o projeto:</p>
