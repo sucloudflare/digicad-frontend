@@ -44,11 +44,7 @@
 <pre><code>git clone https://github.com/seu-usuario/frontend-study-projects.git</code></pre>
 <p>Navegue até a pasta do projeto React:</p>
 <pre><code>cd react-project-folder</code></pre>
-<p>Instale as dependências:</p>
-<pre><code>npm install</code></pre>
-<p>Execute o projeto:</p>
-<pre><code>npm start</code></pre>
-<p>O projeto estará disponível em <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+000</a>.</p>
 
 <h2>Conclusão</h2>
 <p>Este repositório serve como uma coleção de <strong>experimentos de estudo</strong>. Ele documenta minhas tentativas e aprendizagens com várias tecnologias de frontend e está em constante evolução. Estou animado para continuar o aprendizado e avançar com projetos mais completos.</p>
