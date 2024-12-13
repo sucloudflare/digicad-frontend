@@ -41,9 +41,9 @@
  <p>Navegue até a pasta do projeto desejado e abra o arquivo <code>.html</code> diretamente no navegador.</p>
 
 <h3>Para Projetos React:</h3>
-<pre><code>git clone https://github.com/seu-usuario/frontend-study-projects.git</code></pre>
+<pre><code>git clone https://github.com/sucloudlfare/digicad-frontend.git</code></pre>
 <p>Navegue até a pasta do projeto React:</p>
-<pre><code>cd react-project-folder</code></pre>
+<pre><code>cd digicad-frontend</code></pre>
 000</a>.</p>
 
 <h2>Conclusão</h2>
