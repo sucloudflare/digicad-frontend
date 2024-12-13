@@ -37,7 +37,7 @@
 <p>Abaixo estão as instruções para rodar os projetos localmente. Como os projetos estão em estágios variados, é importante verificar cada pasta para saber se há dependências específicas ou requisitos adicionais.</p>
 
 <h3>Para Projetos HTML, CSS e JavaScript:</h3>
-<pre><code>git clone https://github.com/seu-usuario/frontend-study-projects.git</code></pre>
+<pre><code>git clone https://github.com/sucloudlfare/digicad-frontend.git</code></pre>
  <p>Navegue até a pasta do projeto desejado e abra o arquivo <code>.html</code> diretamente no navegador.</p>
 
 <h3>Para Projetos React:</h3>
