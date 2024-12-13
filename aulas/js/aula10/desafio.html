@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Post</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+  <h1>Criar Post</h1>
+
+  <!-- Formulário para criar um novo post -->
+  <form id="formulario-post">
+    <input type="text" id="title" placeholder="Título do Post" required>
+    <textarea id="content" placeholder="Conteúdo do Post" required></textarea>
+    <button type="submit">Criar Post</button>
+  </form>
+
+  <h2>Detalhes do Post Criado</h2>
+  <p id="post-id"></p>
+  <p id="post-title"></p>
+  <p id="post-content"></p>
+
+  <script>
+    // Função para enviar os dados via POST para criar um post
+    $("#formulario-post").on("submit", function(event) {
+      event.preventDefault();
+
+      const title = $("#title").val();
+      const content = $("#content").val();
+
+      // Envia dados via POST para a API JSONPlaceholder
+      $.ajax({
+        url: "https://jsonplaceholder.typicode.com/posts",
+        type: "POST",
+        data: {
+          title: title,
+          body: content,
+          userId: 1  // Definindo um userId fictício (pois a API requer)
+        },
+        success: function(resposta) {
+          // Exibe os detalhes do post criado na tela
+          $("#post-id").text("ID do Post: " + resposta.id);
+          $("#post-title").text("Título: " + resposta.title);
+          $("#post-content").text("Conteúdo: " + resposta.body);
+
+          // Limpar o formulário
+          $("#formulario-post")[0].reset();
+        },
+        error: function(erro) {
+          alert("Erro ao criar o post: " + erro.statusText);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

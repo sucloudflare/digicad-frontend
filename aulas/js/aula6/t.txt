@@ -1,0 +1,17 @@
+Contexto do Exercício:
+Você é contratado por uma escola para criar um sistema simples de perguntas e respostas que será usado por estudantes no laboratório de informática. O sistema deve exibir uma pergunta e permitir que o estudante digite sua resposta em um campo de texto. Ao clicar em "Enviar", a aplicação deve verificar se a resposta está correta e mostrar uma mensagem de feedback.
+Prof° Pietro
+Objetivo:
+Criar uma página web interativa que use JavaScript para manipular o DOM e implemente a lógica de verificação da resposta.
+Prof° Pietro
+Requisitos:
+Crie uma página HTML com:
+Um elemento <h1> para o título da atividade.
+Um <p> para exibir a pergunta.
+Um <input> para o estudante digitar a resposta.
+Um botão Enviar.
+Um elemento <div> para exibir o feedback (se a resposta está correta ou errada).
+Use JavaScript para:
+Manipular o DOM e capturar o valor digitado pelo usuário.
+Comparar a resposta do usuário com a resposta correta.
+Exibir uma mensagem de "Correto!" ou "Errado, tente novamente!" no <div>.

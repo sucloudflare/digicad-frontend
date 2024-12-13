@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Crie uma função chamada calculadora que receba três argumentos:
+// dois números e uma operação matemática (+, -, *, /).
+// A função deve realizar a operação e retornar o resultado.
+// Se a operação for inválida, retorne uma mensagem de erro.
+
+function calculadora(num1, num2, operacao){
+  let result;
+  if(operacao === '+'){
+    result = num1 + num2
+  }else if(operacao === '-'){
+    result = num1 - num2
+  }else if(operacao === '*'){
+    result = num1 * num2
+  }else if(operacao === '/'){
+    result = num1 / num2
+  }
+
+  return result
+}
+  </script>
+</body>
+</html>

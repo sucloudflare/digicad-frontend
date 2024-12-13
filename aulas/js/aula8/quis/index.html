@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .quiz-container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .answer {
+    padding: 10px;
+    font-size: 16px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .answer:hover {
+    background: #0056b3;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #result p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  </style>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz de Programação</h1>
+    <div id="quiz">
+      <div class="question">Qual a linguagem mais usada em 2024?</div>
+      <div class="answers">
+        <button class="answer" onclick="checkAnswer(this, 'errado')">Python</button>
+        <button class="answer" onclick="checkAnswer(this, 'correto')">JavaScript</button>
+        <button class="answer" onclick="checkAnswer(this, 'errado')">C++</button>
+        <button class="answer" onclick="checkAnswer(this, 'errado')">Ruby</button>
+      </div>
+    </div>
+    <div id="result" class="hidden">
+      <p id="result-text"></p>
+      <button onclick="restartQuiz()">Reiniciar Quiz</button>
+    </div>
+  </div>
+  <script>
+    function checkAnswer(button, status) {
+  const quiz = document.getElementById("quiz");
+  const result = document.getElementById("result");
+  const resultText = document.getElementById("result-text");
+
+  if (status === "correto") {
+    resultText.textContent = "Parabéns! Você acertou! 🎉";
+    resultText.style.color = "green";
+  } else {
+    resultText.textContent = "Ops! Resposta errada. 😢";
+    resultText.style.color = "red";
+  }
+
+  quiz.classList.add("hidden");
+  result.classList.remove("hidden");
+}
+
+function restartQuiz() {
+  const quiz = document.getElementById("quiz");
+  const result = document.getElementById("result");
+
+  quiz.classList.remove("hidden");
+  result.classList.add("hidden");
+}
+
+  </script>
+</body>
+</html>

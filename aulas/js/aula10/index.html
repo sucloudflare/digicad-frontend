@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #4caf50;
+        font-size: 36px;
+      }
+
+      h2 {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      button {
+        display: block;
+        margin: 10px auto;
+        padding: 20px 40px;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 7px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #formulario-post {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      input, textarea {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+        max-width: 500px;
+      }
+
+      #post-id, #post-title, #post-content {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px;
+        color: #333;
+      }
+    </style>
+</head>
+<body>
+    <h1>Lista de Usuários</h1>
+    <h2>Usuários:</h2>
+    <ul id="usuarios-lista"></ul>
+    <button id="buscar">Buscar Usuários</button>
+
+    <h1>Criar Post</h1>
+
+    <!-- Formulário para criação de post -->
+    <form id="formulario-post">
+      <input type="text" id="title" placeholder="Título do Post" required>
+      <textarea id="content" placeholder="Conteúdo do Post" required></textarea>
+      <button type="submit">Criar Post</button>
+    </form>
+
+    <h2>Detalhes do Post Criado</h2>
+    <p id="post-id"></p>
+    <p id="post-title"></p>
+    <p id="post-content"></p>
+
+    <script>
+      // Função para buscar usuários
+      $("#buscar").on('click', () => {
+        $.ajax({
+          url: "https://reqres.in/api/users",
+          type: "GET",
+          success: function(resposta) {
+            $("#usuarios-lista").empty();
+            resposta.data.forEach(usuario => {
+              $("#usuarios-lista").append(
+                `<li>${usuario.first_name} ${usuario.last_name}</li>`
+              );
+            });
+          },
+          error: function(erro) {
+            $("#usuarios-lista").append(`<li>ERRO: ${erro.statusText}</li>`);
+          }
+        });
+      });
+
+      // Função para enviar o formulário de criação de post
+      $("#formulario-post").on("submit", function(event) {
+        event.preventDefault();
+
+        const title = $("#title").val();
+        const content = $("#content").val();
+
+        // Enviar dados via POST para a API JSONPlaceholder
+        $.ajax({
+          url: "https://jsonplaceholder.typicode.com/posts",
+          type: "POST",
+          data: {
+            title: title,
+            body: content,
+            userId: 1  // Definindo um userId fictício (a API requer)
+          },
+          success: function(resposta) {
+            // Exibe os detalhes do post criado
+            $("#post-id").text("ID do Post: " + resposta.id);
+            $("#post-title").text("Título: " + resposta.title);
+            $("#post-content").text("Conteúdo: " + resposta.body);
+
+            // Limpar o formulário
+            $("#formulario-post")[0].reset();
+          },
+          error: function(erro) {
+            alert("Erro ao criar o post: " + erro.statusText);
+          }
+        });
+      });
+    </script>
+</body>
+</html>

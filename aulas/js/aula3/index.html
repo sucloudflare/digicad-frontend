@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = parseInt(prompt('Digite um número:')); // Solicita um número ao usuário
+
+        // Verifica se o número é par
+        let isEven = x % 2 === 1;
+
+        // Loop de 0 a 10
+        for (let i = 0; i <= 10; i++) {
+            // Soma `i` à variável `x`
+            x += i;
+            alert(`O número atualizado é: ${x}, e ele é ${isEven ? 'par' : 'ímpar'}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Jquery</h1>
+    <p id='p'>é muito é massa</p>
+    <button id = 'b' >Clique aqui</button>
+    <script>
+        let p = $('#p')
+        let b = $('#b')
+        b.on('click',() => p.text('hora do show') && p.css('color', 'red') && p.css('font-size', '30px') )
+        // https://jsonplaceholder.typicode.com/users
+
+        $.ajax({
+            url:'https://jsonplaceholder.typicode.com/users'
+            type:'GET'
+        })
+
+    </script>
+</body>
+</html>

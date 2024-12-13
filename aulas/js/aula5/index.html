@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            border: none;
+            background-color: #0b6923;
+            padding: 15px;
+            margin-left: 5px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: rgb(143, 211, 149);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <button class="btn" id="btnSol">Modo Sol</button>
+        <button class="btn" onclick="modoLua()">Modo Lua</button>
+        <h1>Oi</h1>
+        <button class="btn" onclick="playAudio()">Não clica aqui</button>
+    </div>
+    <script>
+        // Seleciona os elementos dos botões
+        let btnSol = document.getElementById("btnSol");
+
+        // Seleciona o body
+        let body = document.body;
+
+        // Função para aplicar o modo Sol
+        function modoSol() {
+            body.style.backgroundColor = "white"; // Define fundo branco
+            body.style.color = "black"; // Define texto preto
+        }
+
+        // Função para aplicar o modo Lua
+        function modoLua() {
+            body.style.backgroundColor = "black"; // Define fundo preto
+            body.style.color = "white"; // Define texto branco
+        }
+
+        // Função para reproduzir um áudio
+        function playAudio() {
+            let audio = new Audio('./a.mp3'); // Caminho do arquivo de áudio
+            audio.play(); // Reproduz o áudio
+        }
+
+        // Adiciona evento de clique ao botão "Modo Sol"
+        btnSol.addEventListener("click", modoSol);
+    </script>
+</body>
+</html>
